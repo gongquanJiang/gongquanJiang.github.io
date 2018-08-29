@@ -9,18 +9,18 @@
   
   <title>爬虫初阶 | 番茄&#39;Jiang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo+github搭建的博客">
-<meta name="keywords" content="requests请求,三种不同类型的网页爬取">
+  <meta name="description" content="爬虫概念、工具和HTTP1、什么是爬虫 爬虫就是模拟客户端(浏览器)发送网络请求，获取服务器响应，按照规则提取数据的程序  2、爬虫数据去哪了 网页呈现出来（不是做新闻的app通过爬虫抓取新闻） 进行分析 (从数据中分析想要的（大公司拥有大数据，小公司抓取数据）实例: 爬取小说、新闻等呈现到前端页面  3、 浏览器的请求 url 在chrome中点击检查，点击网络network url = 请求协">
+<meta name="keywords" content="requests模块,三种不同类型的网页爬取">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爬虫初阶">
 <meta property="og:url" content="https://gongquanJiang.github.io/2018/08/27/爬虫初阶/index.html">
 <meta property="og:site_name" content="番茄&#39;Jiang">
-<meta property="og:description" content="hexo+github搭建的博客">
+<meta property="og:description" content="爬虫概念、工具和HTTP1、什么是爬虫 爬虫就是模拟客户端(浏览器)发送网络请求，获取服务器响应，按照规则提取数据的程序  2、爬虫数据去哪了 网页呈现出来（不是做新闻的app通过爬虫抓取新闻） 进行分析 (从数据中分析想要的（大公司拥有大数据，小公司抓取数据）实例: 爬取小说、新闻等呈现到前端页面  3、 浏览器的请求 url 在chrome中点击检查，点击网络network url = 请求协">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-27T06:02:39.633Z">
+<meta property="og:updated_time" content="2018-08-29T14:04:38.679Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫初阶">
-<meta name="twitter:description" content="hexo+github搭建的博客">
+<meta name="twitter:description" content="爬虫概念、工具和HTTP1、什么是爬虫 爬虫就是模拟客户端(浏览器)发送网络请求，获取服务器响应，按照规则提取数据的程序  2、爬虫数据去哪了 网页呈现出来（不是做新闻的app通过爬虫抓取新闻） 进行分析 (从数据中分析想要的（大公司拥有大数据，小公司抓取数据）实例: 爬取小说、新闻等呈现到前端页面  3、 浏览器的请求 url 在chrome中点击检查，点击网络network url = 请求协">
   
     <link rel="alternative" href="/atom.xml" title="番茄&#39;Jiang" type="application/atom+xml">
   
@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/requests请求/" style="font-size: 10px;">requests请求</a> <a href="/tags/三种不同类型的网页爬取/" style="font-size: 10px;">三种不同类型的网页爬取</a> <a href="/tags/待续/" style="font-size: 20px;">待续...</a>
+                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/requests模块/" style="font-size: 10px;">requests模块</a> <a href="/tags/三种不同类型的网页爬取/" style="font-size: 10px;">三种不同类型的网页爬取</a> <a href="/tags/待续/" style="font-size: 10px;">待续...</a> <a href="/tags/数据提取方法/" style="font-size: 10px;">数据提取方法</a> <a href="/tags/语言/" style="font-size: 10px;">语言</a>
                     </div>
                 </section>
                 
@@ -305,7 +305,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/requests请求/">requests请求</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/三种不同类型的网页爬取/">三种不同类型的网页爬取</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/requests模块/">requests模块</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/三种不同类型的网页爬取/">三种不同类型的网页爬取</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -315,7 +315,129 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h2 id="爬虫概念、工具和HTTP"><a href="#爬虫概念、工具和HTTP" class="headerlink" title="爬虫概念、工具和HTTP"></a>爬虫概念、工具和HTTP</h2><h3 id="1、什么是爬虫"><a href="#1、什么是爬虫" class="headerlink" title="1、什么是爬虫"></a>1、什么是爬虫</h3><ul>
+<li>爬虫就是<code>模拟客户端(浏览器)发送网络请求</code>，获取服务器响应，按照规则提取数据的程序</li>
+</ul>
+<h3 id="2、爬虫数据去哪了"><a href="#2、爬虫数据去哪了" class="headerlink" title="2、爬虫数据去哪了"></a>2、爬虫数据去哪了</h3><ul>
+<li>网页呈现出来（不是做新闻的app通过爬虫抓取新闻）</li>
+<li>进行分析 (从数据中分析想要的（大公司拥有大数据，小公司抓取数据）<br>实例: 爬取小说、新闻等呈现到前端页面</li>
+</ul>
+<h3 id="3、-浏览器的请求"><a href="#3、-浏览器的请求" class="headerlink" title="3、 浏览器的请求"></a>3、 浏览器的请求</h3><ul>
+<li>url<ul>
+<li>在chrome中点击检查，点击网络network</li>
+<li>url = 请求协议 + 网络域名、主机名 + 资源路径 +? 参数</li>
+</ul>
+</li>
+<li>小技巧: url解码工具： 将url地址解码，可以将参数具体</li>
+<li>浏览器请求url出现大量字符串元素（网页元素由大量工具编写js、css)<ul>
+<li>当前url对应响应 + js + css + 图片 —–即elements中的内容</li>
+</ul>
+</li>
+<li>爬虫请求url地址<ul>
+<li>当前url对应响应</li>
+</ul>
+</li>
+<li>elements的内容和爬虫获取的url地址对应的响应不同，爬虫中需要以当前url地址对应响应为准提取数据</li>
+<li>当前url地址对应的响应在哪<ul>
+<li>从network中找到当前url地址，点击response</li>
+<li>或者在页面上右键显示网页源码(对于更新快的网页，网页源码中元素可能不断改变)</li>
+</ul>
+</li>
+</ul>
+<h3 id="4、-认识HTTP、HTTPS"><a href="#4、-认识HTTP、HTTPS" class="headerlink" title="4、 认识HTTP、HTTPS"></a>4、 认识HTTP、HTTPS</h3><ul>
+<li>HTTP: 超文本传输协议<ul>
+<li>以明文形式传输</li>
+<li>效率高、不安全</li>
+</ul>
+</li>
+<li>HTTPS: HTTP+SSL(安全套接字层)<ul>
+<li>每次传输之前数据先加密，之后解密获取</li>
+<li>效率低、安全</li>
+</ul>
+</li>
+<li>get请求和post请求的区别<ul>
+<li>get请求没有请求体，post含有，get请求把数据放到url地址中</li>
+<li>post请求常用于登录注册</li>
+<li>post请求携带的数据量比get请求大，多，常用于传输大文本</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>HTTP之请求<br>Request Header<br>view parms<ul>
+<li>请求行</li>
+<li>请求头 Host、Connection、cache-Control、   User-Agent用户代理：(对方服务器了解访问者是什么浏览器、还是爬虫)<br>如果我们需要模拟手机版浏览器则修改User-Agent,并选择相应型号手机<ul>
+<li>Cookie： 用来存储用户信息、每次请求会被携带上发送给对方的浏览器</li>
+<li>要获取登录后才能访问的页面</li>
+<li>对方的服务器会通过cookie来判断我们是否是一个爬虫</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>请求体</li>
+<li>携带数据</li>
+<li>get请求没有请求体，post含有</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>HTTP协议之响应<ul>
+<li>1.响应头</li>
+<li>Set-Cookie: 对方服务器通过该字段设置Cookie(cookies查看)到本地</li>
+<li>2.响应体</li>
+<li>url地址对应的响应</li>
+</ul>
+</li>
+</ul>
+<h2 id="requests模块"><a href="#requests模块" class="headerlink" title="requests模块"></a>requests模块</h2><h3 id="1、-使用前安装"><a href="#1、-使用前安装" class="headerlink" title="1、 使用前安装"></a>1、 使用前安装</h3><p>pip install requests</p>
+<h3 id="2、-get-post响应请求"><a href="#2、-get-post响应请求" class="headerlink" title="2、 get/post响应请求"></a>2、 get/post响应请求</h3><ul>
+<li>response = requests.get(url)  #发送get请求，请求url地址对应的响应</li>
+<li>response = requests.post(url, data = {请求的字典}) #发送post请求并附带请求体，请求url地址对应的响应</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">url = &quot; &quot;</span><br><span class="line">query_string = &#123;&quot;query&quot;:&quot;.....&quot;,</span><br><span class="line">                 &quot;from&quot;:&quot;zh&quot;,</span><br><span class="line">                 &quot;to&quot;:&quot;en&#125;</span><br><span class="line">headers = &#123;&quot;User-Agent&quot;:&quot;......&quot;网页Fn+12赋值&#125;</span><br><span class="line"></span><br><span class="line">response = requests.post(url,data = query_string，headers = headers)</span><br><span class="line">print(response) #判断请求正常发送出去，服务器响应</span><br><span class="line">print(response.content.decode())</span><br></pre></td></tr></table></figure>
+<h3 id="3、response方法"><a href="#3、response方法" class="headerlink" title="3、response方法"></a>3、response方法</h3><ul>
+<li>response.text<br>大部分都会出现乱码，一般加上resonse.encoding = ‘utf-8’ </li>
+<li>response.content.decode()<br>二进制字节流byte形式显示，一般加上decode()转化为str类型</li>
+<li>response.encoding = response.apparent_encoding<br>通过网页内容分析编码 </li>
+<li>response.request.url  #发送请求的url地址，字符串</li>
+<li>response.url          #response相应的url地址,页面跳转和前面一个不一样</li>
+<li>response.request.headers #请求头，字典</li>
+<li>response.headers #响应头  </li>
+</ul>
+<h3 id="4、获取网页源码正确打开方式"><a href="#4、获取网页源码正确打开方式" class="headerlink" title="4、获取网页源码正确打开方式"></a>4、获取网页源码正确打开方式</h3><ol>
+<li>response.content.decode()     </li>
+<li>response.content.decode(“gbk”)</li>
+<li>response.text      #requests根据头部猜测，该方式往往出现乱码，解决response.encoding=’utf-8’</li>
+</ol>
+<h3 id="5、发送header请求"><a href="#5、发送header请求" class="headerlink" title="5、发送header请求"></a>5、发送header请求</h3><ul>
+<li><code>目的为了模拟浏览器，获取和浏览器一模一样的内容</code><br>headers = {“User-Agent”:……网页Fn+12赋值}<br>“Referer”:”…..”<br>更多的参数尝试</li>
+</ul>
+<p>response = requests.get(url,headers = headers)<br>response = requests.post(url,data = data,headers=headers)</p>
+<h3 id="6、使用超时参数"><a href="#6、使用超时参数" class="headerlink" title="6、使用超时参数"></a>6、使用超时参数</h3><ul>
+<li>requests.get(url,headers = headers,timeout=3) #3秒内必须返回，否则报错</li>
+</ul>
+<h3 id="7、retrying模块学习"><a href="#7、retrying模块学习" class="headerlink" title="7、retrying模块学习"></a>7、retrying模块学习</h3><ul>
+<li>pip install retrying</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from retrying import retry</span><br><span class="line"></span><br><span class="line">@retry(stop_max_attempt_number=3)   #让被装饰的函数，反复请求3次，三次报错才报错，只要有一次正确请求则返回</span><br><span class="line">def fun1():</span><br><span class="line">    print(&quot;this is fun1&quot;)</span><br><span class="line">    raise ValueErro(&quot;this is test error)  #报错效果</span><br></pre></td></tr></table></figure>
+<h4 id="8、详细代码"><a href="#8、详细代码" class="headerlink" title="8、详细代码"></a>8、详细代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;&quot;User-Agent&quot;:&quot;.....&quot;&#125;</span><br><span class="line"></span><br><span class="line">@retry(stop_max_attempt_number=3)</span><br><span class="line">def _parse_url(url):</span><br><span class="line">    print(&quot;*&quot;*100)   #检测</span><br><span class="line">    response = requests.get(url,headers=headers,timeout)</span><br><span class="line">    return response.content.decode()</span><br><span class="line"></span><br><span class="line">def parse_url(url):</span><br><span class="line">     try:</span><br><span class="line">         html_str = _parse_url(url)</span><br><span class="line">     except:</span><br><span class="line">         html_str = None</span><br><span class="line">     return html_str</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:         #本模块执行</span><br><span class="line">    url = &quot;http://www.baidu.com&quot;</span><br><span class="line">    print(parse_url(url)[:100])    #取字符串前100</span><br></pre></td></tr></table></figure>
+<h3 id="9、requests处理Cooike相关请求"><a href="#9、requests处理Cooike相关请求" class="headerlink" title="9、requests处理Cooike相关请求"></a>9、requests处理Cooike相关请求</h3><ul>
+<li>人人网(“email”:”<a href="mailto:mr_mao_hacker@163.com" target="_blank" rel="noopener">mr_mao_hacker@163.com</a>“,”password”:”alarmchime”)</li>
+<li>方式一: 直接携带Cooike请求url地址</li>
+</ul>
+<ol>
+<li>cookie放在headers中<br>1.1 headers = {“User-Agent”:”…”,<br>  “Cookie”:”…”}</li>
+<li>cookie字典传给cookies参数<br>requests.get(url,cookies  = cookie_dict)</li>
+</ol>
+<ul>
+<li>方式二: 先发送post请求，获取cookie，带上cookie请求登录后的页面</li>
+</ul>
+<ol>
+<li>session = requests.session()   # 帮助和服务端回话保持| 方法和request相同</li>
+<li>session.post(url,data,headers) #服务器设置在本地的cookie会保存在session中</li>
+<li>session.get(url)   #会带上之前保存在session中的cookie,能够请求成功</li>
+</ol>
+<h3 id="10、在使用session-请求登录后的页面"><a href="#10、在使用session-请求登录后的页面" class="headerlink" title="10、在使用session 请求登录后的页面"></a>10、在使用session 请求登录后的页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url = &quot;.....&quot;</span><br><span class="line">response = session.get(url,headers=headers)</span><br><span class="line">with open(&quot;renren3.html&quot;,&quot;w&quot;,encoding=&apos;utf-8&apos;) as f:</span><br><span class="line">    f.write(response.content.decode()</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -326,7 +448,7 @@
         <p><span>本文标题:</span><a  href="/2018/08/27/爬虫初阶/">爬虫初阶</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 成熟的汪 的个人博客">成熟的汪</a></p>
         <p><span>发布时间:</span>2018年08月27日 - 11时56分</p>
-        <p><span>最后更新:</span>2018年08月27日 - 14时02分</p>
+        <p><span>最后更新:</span>2018年08月29日 - 22时04分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/08/27/爬虫初阶/" title="爬虫初阶">https://gongquanJiang.github.io/2018/08/27/爬虫初阶/</a>
             <span class="copy-path" data-clipboard-text="原文: https://gongquanJiang.github.io/2018/08/27/爬虫初阶/　　作者: 成熟的汪" title=""></span>
@@ -363,7 +485,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#爬虫概念、工具和HTTP"><span class="toc-number">1.</span> <span class="toc-text">爬虫概念、工具和HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、什么是爬虫"><span class="toc-number">1.1.</span> <span class="toc-text">1、什么是爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、爬虫数据去哪了"><span class="toc-number">1.2.</span> <span class="toc-text">2、爬虫数据去哪了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、-浏览器的请求"><span class="toc-number">1.3.</span> <span class="toc-text">3、 浏览器的请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、-认识HTTP、HTTPS"><span class="toc-number">1.4.</span> <span class="toc-text">4、 认识HTTP、HTTPS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#requests模块"><span class="toc-number">2.</span> <span class="toc-text">requests模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、-使用前安装"><span class="toc-number">2.1.</span> <span class="toc-text">1、 使用前安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、-get-post响应请求"><span class="toc-number">2.2.</span> <span class="toc-text">2、 get/post响应请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、response方法"><span class="toc-number">2.3.</span> <span class="toc-text">3、response方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、获取网页源码正确打开方式"><span class="toc-number">2.4.</span> <span class="toc-text">4、获取网页源码正确打开方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、发送header请求"><span class="toc-number">2.5.</span> <span class="toc-text">5、发送header请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、使用超时参数"><span class="toc-number">2.6.</span> <span class="toc-text">6、使用超时参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、retrying模块学习"><span class="toc-number">2.7.</span> <span class="toc-text">7、retrying模块学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8、详细代码"><span class="toc-number">2.7.1.</span> <span class="toc-text">8、详细代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、requests处理Cooike相关请求"><span class="toc-number">2.8.</span> <span class="toc-text">9、requests处理Cooike相关请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、在使用session-请求登录后的页面"><span class="toc-number">2.9.</span> <span class="toc-text">10、在使用session 请求登录后的页面</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -447,7 +569,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/爬虫进阶/">爬虫进阶</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/爬虫初阶/">爬虫初阶</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/python基础/">python基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/26/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/28/markdown语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/爬虫进阶/">爬虫进阶</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/爬虫初阶/">爬虫初阶</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/python基础/">python基础</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 

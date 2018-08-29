@@ -9,18 +9,18 @@
   
   <title>爬虫进阶 | 番茄&#39;Jiang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo+github搭建的博客">
-<meta name="keywords" content="待续...">
+  <meta name="description" content="数据提取方法json 数据交换格式(后端转换到前端)，看起来像python类型(字典、集合…)的字符串 使用json之前需要导入模块 哪里会返回json数据 浏览器切换到手机版 抓包app   jsom.loads 把json字符串转化为python类型 json.loads(&amp;#39;json字符串&amp;#39;)   json.dump 把python类型转化为json字符串 json.dumps">
+<meta name="keywords" content="数据提取方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爬虫进阶">
 <meta property="og:url" content="https://gongquanJiang.github.io/2018/08/27/爬虫进阶/index.html">
 <meta property="og:site_name" content="番茄&#39;Jiang">
-<meta property="og:description" content="hexo+github搭建的博客">
+<meta property="og:description" content="数据提取方法json 数据交换格式(后端转换到前端)，看起来像python类型(字典、集合…)的字符串 使用json之前需要导入模块 哪里会返回json数据 浏览器切换到手机版 抓包app   jsom.loads 把json字符串转化为python类型 json.loads(&amp;#39;json字符串&amp;#39;)   json.dump 把python类型转化为json字符串 json.dumps">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-27T06:04:31.352Z">
+<meta property="og:updated_time" content="2018-08-29T14:03:47.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫进阶">
-<meta name="twitter:description" content="hexo+github搭建的博客">
+<meta name="twitter:description" content="数据提取方法json 数据交换格式(后端转换到前端)，看起来像python类型(字典、集合…)的字符串 使用json之前需要导入模块 哪里会返回json数据 浏览器切换到手机版 抓包app   jsom.loads 把json字符串转化为python类型 json.loads(&amp;#39;json字符串&amp;#39;)   json.dump 把python类型转化为json字符串 json.dumps">
   
     <link rel="alternative" href="/atom.xml" title="番茄&#39;Jiang" type="application/atom+xml">
   
@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/requests请求/" style="font-size: 10px;">requests请求</a> <a href="/tags/三种不同类型的网页爬取/" style="font-size: 10px;">三种不同类型的网页爬取</a> <a href="/tags/待续/" style="font-size: 20px;">待续...</a>
+                        <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/requests模块/" style="font-size: 10px;">requests模块</a> <a href="/tags/三种不同类型的网页爬取/" style="font-size: 10px;">三种不同类型的网页爬取</a> <a href="/tags/待续/" style="font-size: 10px;">待续...</a> <a href="/tags/数据提取方法/" style="font-size: 10px;">数据提取方法</a> <a href="/tags/语言/" style="font-size: 10px;">语言</a>
                     </div>
                 </section>
                 
@@ -305,7 +305,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/待续/">待续...</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据提取方法/">数据提取方法</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -315,7 +315,38 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h2 id="数据提取方法"><a href="#数据提取方法" class="headerlink" title="数据提取方法"></a>数据提取方法</h2><h3 id="json"><a href="#json" class="headerlink" title="json"></a>json</h3><ul>
+<li>数据交换格式(后端转换到前端)，看起来像python类型(字典、集合…)的字符串</li>
+<li>使用json之前需要导入模块</li>
+<li>哪里会返回json数据<ul>
+<li>浏览器切换到手机版</li>
+<li>抓包app</li>
+</ul>
+</li>
+<li>jsom.loads<ul>
+<li>把json字符串转化为python类型</li>
+<li><code>json.loads(&#39;json字符串&#39;)</code></li>
+</ul>
+</li>
+<li>json.dump<ul>
+<li>把python类型转化为json字符串</li>
+<li><code>json.dumps(&#39;{python字典}&#39;)</code></li>
+<li>json.dumps(ret1,ensure_ascii=False,indent=2)<ul>
+<li>ensure_ascii : 让中文显示成中文</li>
+<li>indent: 能够让下一行在上一行的基础上空格， indent = 2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>豆瓣电视爬虫案例<ul>
+<li>preview<code>搜索需要的爬取的内容</code></li>
+<li>Filter 过滤显示输入字段的url地址</li>
+<li>案例实现代码:</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=gbk</span></span><br><span class="line"><span class="keyword">from</span> parse <span class="keyword">import</span> parse_url</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubanSpider</span>:</span></span><br><span class="line">    <span class="string">"""豆瓣内容抓取"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment">#最开始的入口</span></span><br><span class="line">        self.temp_url = <span class="string">"https://movie.douban.com/j/search_subjects?type=tv&amp;tag=%E7%BE%8E%E5%89%A7&amp;sort=recommend&amp;page_limit=20&amp;page_start=&#123;&#125;"</span>       <span class="comment"># &#123;&#125;大括号里对应字段传入值num的.format(num)</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_content_list</span><span class="params">(self,html_str)</span>:</span>  <span class="comment">#提取数据</span></span><br><span class="line">        dict_data = json.loads(html_str)   <span class="comment">#有callback就删除</span></span><br><span class="line">        content_list = dict_data[<span class="string">"subjects"</span>]</span><br><span class="line">        <span class="comment">#total = dict_data["total"] 没有total的话自己设置</span></span><br><span class="line">        <span class="keyword">return</span> content_list   <span class="comment">#,total</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save_content_list</span><span class="params">(self,content_list)</span>:</span></span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">"douban.json"</span>,<span class="string">"a"</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> content <span class="keyword">in</span> content_list:</span><br><span class="line">                 f.write(json.dumps(content,ensure_ascii=<span class="keyword">False</span>)) </span><br><span class="line">                 f.write(<span class="string">"\n"</span>)</span><br><span class="line">        print(<span class="string">'保存成功'</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span>  <span class="comment">#实现主要逻辑</span></span><br><span class="line">        num = <span class="number">0</span></span><br><span class="line">        <span class="comment">#total = 100  初始化total,第二页更新时不使用</span></span><br><span class="line">        <span class="keyword">while</span> num &lt; <span class="number">100</span>: <span class="comment">#num &lt; total+ page_limit 全部提取数据</span></span><br><span class="line">            <span class="comment">#1.start_url</span></span><br><span class="line">            url = self.temp_url.format(num)  <span class="comment">#对start进行复制</span></span><br><span class="line">            print(url)</span><br><span class="line">            <span class="comment">#2.发送请求，获取响应</span></span><br><span class="line">            html_str = parse_url(url)</span><br><span class="line">            <span class="comment">#3.提取数据</span></span><br><span class="line">            content_list = self.get_content_list(html_str) <span class="comment">#content,tatal = </span></span><br><span class="line">            <span class="comment">#4.保存</span></span><br><span class="line">            self.save_content_list(content_list)</span><br><span class="line">            <span class="comment">#5.构造下一页的url，循环2-5步</span></span><br><span class="line">            num += <span class="number">20</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    douban = DoubanSpider()   <span class="comment">#实例化</span></span><br><span class="line">    douban.run()</span><br></pre></td></tr></table></figure>
+<h3 id="lxml"><a href="#lxml" class="headerlink" title="lxml"></a>lxml</h3>
       
     </div>
     
@@ -326,7 +357,7 @@
         <p><span>本文标题:</span><a  href="/2018/08/27/爬虫进阶/">爬虫进阶</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 成熟的汪 的个人博客">成熟的汪</a></p>
         <p><span>发布时间:</span>2018年08月27日 - 12时58分</p>
-        <p><span>最后更新:</span>2018年08月27日 - 14时04分</p>
+        <p><span>最后更新:</span>2018年08月29日 - 22时03分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/08/27/爬虫进阶/" title="爬虫进阶">https://gongquanJiang.github.io/2018/08/27/爬虫进阶/</a>
             <span class="copy-path" data-clipboard-text="原文: https://gongquanJiang.github.io/2018/08/27/爬虫进阶/　　作者: 成熟的汪" title=""></span>
@@ -339,6 +370,15 @@
 
 
 <nav id="article-nav">
+  
+    <a  href="/2018/08/28/markdown语法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          markdown语法
+        
+      </div>
+    </a>
   
   
     <a  href="/2018/08/27/爬虫初阶/" id="article-nav-older" class="article-nav-link-wrap">
@@ -354,7 +394,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据提取方法"><span class="toc-number">1.</span> <span class="toc-text">数据提取方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json"><span class="toc-number">1.1.</span> <span class="toc-text">json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lxml"><span class="toc-number">1.2.</span> <span class="toc-text">lxml</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -427,7 +467,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a  href="/2018/08/28/markdown语法/" title="上一篇: markdown语法">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -436,7 +478,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/爬虫进阶/">爬虫进阶</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/爬虫初阶/">爬虫初阶</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/python基础/">python基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/26/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/28/markdown语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/爬虫进阶/">爬虫进阶</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/爬虫初阶/">爬虫初阶</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/27/python基础/">python基础</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
