@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="番茄&#39;Jiang">
 <meta property="og:description" content="数据提取方法json 数据交换格式(后端转换到前端)，看起来像python类型(字典、集合…)的字符串 使用json之前需要导入模块 哪里会返回json数据 浏览器切换到手机版 抓包app   jsom.loads 把json字符串转化为python类型 json.loads(&amp;#39;json字符串&amp;#39;)   json.dump 把python类型转化为json字符串 json.dumps">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-31T14:07:08.293Z">
+<meta property="og:updated_time" content="2018-10-31T14:09:27.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫进阶">
 <meta name="twitter:description" content="数据提取方法json 数据交换格式(后端转换到前端)，看起来像python类型(字典、集合…)的字符串 使用json之前需要导入模块 哪里会返回json数据 浏览器切换到手机版 抓包app   jsom.loads 把json字符串转化为python类型 json.loads(&amp;#39;json字符串&amp;#39;)   json.dump 把python类型转化为json字符串 json.dumps">
@@ -421,27 +421,22 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    a = <span class="number">10</span> <span class="keyword">if</span> <span class="number">4</span> &gt; <span class="number">3</span> <span class="keyword">else</span> <span class="number">20</span>   <span class="comment"># a = 10</span></span><br><span class="line">    a = <span class="number">10</span> <span class="keyword">if</span> <span class="number">4</span> &lt; <span class="number">3</span> <span class="keyword">else</span> <span class="number">20</span>   <span class="comment"># a = 20</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">### 正则表达式</span></span><br><span class="line">`参考网址: https://blog.csdn.net/baidu_21833433/article/details/<span class="number">70241880</span>`</span><br><span class="line">- 1. 获取成对标签&lt;tr&gt; &lt;/tr&gt;之间的内容</span><br><span class="line">```python</span><br><span class="line">res_tr = <span class="string">r'&lt;tr&gt;(.*?)&lt;/tr&gt;'</span>      <span class="comment"># re.M 改变'^'和'$'行为和 re.S改变'.'的行为</span></span><br><span class="line">m_tr = re.findall(res_tr,language,re.S|re.M)</span><br></pre></td></tr></table></figure>
 <ul>
 <li><ol start="2">
-<li><p>获取超链接<a href="..."></a>之间的内容</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res_tr = <span class="string">r'&lt;a .*?&gt;(.*?)&lt;/a&gt;'</span>  </span><br><span class="line">m_tr=  re.findall(res_tr, content, re.S|re.M)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>2.1 获取所有<a href=""></a>链接所有内容,包含href<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">urls=re.findall(<span class="string">r"&lt;a.*?href=.*?&lt;\/a&gt;"</span>, content, re.I|re.S|re.M)</span><br><span class="line">```  </span><br><span class="line">   - 2.2 获取&lt;a href&gt;&lt;/a&gt;中的URL</span><br><span class="line">```python</span><br><span class="line">res_url = <span class="string">r"(?&lt;=href=\").+?(?=\")|(?&lt;=href=\').+?(?=\')"</span>  </span><br><span class="line">link = re.findall(res_url ,  content, re.I|re.S|re.M)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li>获取超链接<a href="..."></a>之间的内容<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res_tr = <span class="string">r'&lt;a .*?&gt;(.*?)&lt;/a&gt;'</span>  </span><br><span class="line">m_tr=  re.findall(res_tr, content, re.S|re.M)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+</li>
+<li><p>2.1 获取所有<a href=""></a>链接所有内容,包含href</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">urls=re.findall(<span class="string">r"&lt;a.*?href=.*?&lt;\/a&gt;"</span>, content, re.I|re.S|re.M)</span><br><span class="line">```  </span><br><span class="line">- 2.2 获取&lt;a href&gt;&lt;/a&gt;中的URL</span><br><span class="line">```python</span><br><span class="line">res_url = <span class="string">r"(?&lt;=href=\").+?(?=\")|(?&lt;=href=\').+?(?=\')"</span>  </span><br><span class="line">link = re.findall(res_url ,  content, re.I|re.S|re.M)</span><br></pre></td></tr></table></figure>
 </li>
 <li><ol start="3">
 <li>爬取网页标题title两种方法</li>
 </ol>
-<ul>
+</li>
 <li><p>3.1 method</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title_pat = <span class="string">r'(?&lt;=&lt;title&gt;).*?(?=&lt;/title&gt;)'</span>    </span><br><span class="line">title_ex = re.compile(title_pat,re.M|re.S)    </span><br><span class="line">title_obj = re.search(title_ex, content)  </span><br><span class="line">title = title_obj.group()  </span><br><span class="line"><span class="keyword">print</span> title</span><br></pre></td></tr></table></figure>
-<ul>
-<li>3.2 method<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title = re.findall(<span class="string">r'&lt;title&gt;(.*?)&lt;/title&gt;'</span>, content)  </span><br><span class="line"><span class="keyword">print</span> title[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-</li>
-</ul>
+<li><p>3.2 method</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title = re.findall(<span class="string">r'&lt;title&gt;(.*?)&lt;/title&gt;'</span>, content)  </span><br><span class="line"><span class="keyword">print</span> title[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 </li>
 <li><ol start="4">
 <li>定位table位置并爬取属性-属性值<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">start = content.find(<span class="string">r'&lt;table class="infobox vevent"'</span>) <span class="comment">#起点记录查询位置    </span></span><br><span class="line">end = content.find(<span class="string">r'&lt;/table&gt;'</span>)        </span><br><span class="line">infobox = language[start:end]    </span><br><span class="line"><span class="keyword">print</span> infobox   <span class="comment">#得到start-end之间的结构体</span></span><br></pre></td></tr></table></figure>
@@ -454,7 +449,7 @@
 </ol>
 </li>
 <li><ol start="6">
-<li>过滤HTML标签<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value = re.sub(<span class="string">'&lt;[^&gt;]+&gt;'</span>,<span class="string">''</span>, value)         <span class="comment">#过滤HTML标签</span></span><br></pre></td></tr></table></figure></li>
+<li>过滤HTML标签<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value = re.sub(<span class="string">'&lt;[^&gt;]+&gt;'</span>,<span class="string">''</span>, value)      <span class="comment">#过滤HTML标签</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 </li>
 </ul>
@@ -469,7 +464,7 @@
         <p><span>本文标题:</span><a  href="/2018/08/27/爬虫进阶/">爬虫进阶</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 远方 的个人博客">远方</a></p>
         <p><span>发布时间:</span>2018年08月27日 - 12时58分</p>
-        <p><span>最后更新:</span>2018年10月31日 - 22时07分</p>
+        <p><span>最后更新:</span>2018年10月31日 - 22时09分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/08/27/爬虫进阶/" title="爬虫进阶">https://gongquanJiang.github.io/2018/08/27/爬虫进阶/</a>
             <span class="copy-path" data-clipboard-text="原文: https://gongquanJiang.github.io/2018/08/27/爬虫进阶/　　作者: 远方" title=""></span>
